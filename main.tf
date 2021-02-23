@@ -371,15 +371,15 @@ resource "aws_elastic_beanstalk_environment" "fcrepo" {
   }
 
   setting {
-    namespace = "aws:elasticbeanstalk:environment"
-    name      = "EnvironmentType"
-    value     = "SingleInstance"
-  }
-
-  setting {
     namespace = "aws:ec2:instances"
     name      = "InstanceTypes"
     value     = var.instance_class
+  }
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "RootVolumeSize"
+    value     = var.root_volume_size
   }
 
   setting {

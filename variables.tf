@@ -75,6 +75,11 @@ variable "new_volume_size" {
   default     = 10
 }
 
+variable "root_volume_size" {
+  description = "The size in GBs of the root volume"
+  default     =  10
+}
+
 variable "instance_class" {
   description = "The Fedora ec2 instance class"
   default     = "t3.small"
